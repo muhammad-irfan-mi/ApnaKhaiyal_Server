@@ -9,9 +9,10 @@ const app = express()
 connectDB(process.env.MONGO_URL)
 
 app.use(cors({
-    origin: (origin, callback) => {
-        callback(null, true);
-    },
+    // origin: (origin, callback) => {
+    //     callback(null, true);
+    // },
+    origin: ['http://localhost:5173'],
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     allowedHeaders: "Content-Type, Accept, Authorization",
     credentials: true
